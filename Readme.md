@@ -1,5 +1,6 @@
 
 ########### file description ###########
+
 MovieList is application
 manageMovie is dynamic library to handle data from website
 	movieList.h : declaration of  class movieList
@@ -12,5 +13,6 @@ sortMovie is static library
 	test_sortMovie: unit test application
 
 ########### how to use ###########
+
 open MovieList.xcodeproj in xcode to view and run application
 run test_sortMovie to test sorting function from static library
