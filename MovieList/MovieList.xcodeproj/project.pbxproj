@@ -7,17 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5F118458242CDC8400E629F2 /* mangeMovie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5F118456242CDC8400E629F2 /* mangeMovie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5F11845A242CDD7E00E629F2 /* mangeMovie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F118456242CDC8400E629F2 /* mangeMovie.framework */; };
 		5FFC6EB4242A0E3200D0B27F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC6EB3242A0E3200D0B27F /* main.m */; };
 		5FFC6EB7242A0E3200D0B27F /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC6EB6242A0E3200D0B27F /* AppDelegate.m */; };
 		5FFC6EBA242A0E3200D0B27F /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC6EB9242A0E3200D0B27F /* ViewController.m */; };
 		5FFC6EBD242A0E3200D0B27F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FFC6EBB242A0E3200D0B27F /* Main.storyboard */; };
 		5FFC6EBF242A0E3200D0B27F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5FFC6EBE242A0E3200D0B27F /* Assets.xcassets */; };
 		5FFC6EC2242A0E3200D0B27F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FFC6EC0242A0E3200D0B27F /* LaunchScreen.storyboard */; };
-		5FFC6EDC242A192E00D0B27F /* mangeMovie.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFC6ECC242A10AF00D0B27F /* mangeMovie.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		5FFC6EDF242A1AA000D0B27F /* mangeMovie.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 5FFC6ECC242A10AF00D0B27F /* mangeMovie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F118450242CDBD400E629F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FFC6EE1242A1F5D00D0B27F /* mangeMovie.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FFC6E7F242A050100D0B27F;
+			remoteInfo = mangeMovie;
+		};
 		5FFC6EE7242A1F5D00D0B27F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FFC6EE1242A1F5D00D0B27F /* mangeMovie.xcodeproj */;
@@ -32,40 +39,24 @@
 			remoteGlobalIDString = 5FFC6E93242A0A4C00D0B27F;
 			remoteInfo = dylibMovieList;
 		};
-		5FFC6EEB242A1F8F00D0B27F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5FFC6EE1242A1F5D00D0B27F /* mangeMovie.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FFC6E7F242A050100D0B27F;
-			remoteInfo = mangeMovie;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		5FFC6EDD242A192E00D0B27F /* Embed Frameworks */ = {
+		5F118459242CDC8400E629F2 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				5FFC6EDC242A192E00D0B27F /* mangeMovie.framework in Embed Frameworks */,
+				5F118458242CDC8400E629F2 /* mangeMovie.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5FFC6EDE242A1A8700D0B27F /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 16;
-			files = (
-				5FFC6EDF242A1AA000D0B27F /* mangeMovie.framework in CopyFiles */,
-			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F118456242CDC8400E629F2 /* mangeMovie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mangeMovie.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework"; sourceTree = "<group>"; };
 		5FFC6EAF242A0E3200D0B27F /* MovieList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MovieList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFC6EB3242A0E3200D0B27F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5FFC6EB5242A0E3200D0B27F /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -76,8 +67,6 @@
 		5FFC6EBE242A0E3200D0B27F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5FFC6EC1242A0E3200D0B27F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5FFC6EC3242A0E3200D0B27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5FFC6ECC242A10AF00D0B27F /* mangeMovie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mangeMovie.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/mangeMovie.framework"; sourceTree = "<group>"; };
-		5FFC6ED8242A18F800D0B27F /* mangeMovie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = mangeMovie.framework; path = "../../../../../Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/mangeMovie.framework"; sourceTree = "<group>"; };
 		5FFC6EE1242A1F5D00D0B27F /* mangeMovie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mangeMovie.xcodeproj; path = ../mangeMovie/mangeMovie.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F11845A242CDD7E00E629F2 /* mangeMovie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,11 +85,10 @@
 		5FFC6EA6242A0E3200D0B27F = {
 			isa = PBXGroup;
 			children = (
+				5F118456242CDC8400E629F2 /* mangeMovie.framework */,
 				5FFC6EE1242A1F5D00D0B27F /* mangeMovie.xcodeproj */,
-				5FFC6ED8242A18F800D0B27F /* mangeMovie.framework */,
 				5FFC6EB1242A0E3200D0B27F /* MovieList */,
 				5FFC6EB0242A0E3200D0B27F /* Products */,
-				5FFC6ECB242A10AF00D0B27F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,14 +124,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		5FFC6ECB242A10AF00D0B27F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5FFC6ECC242A10AF00D0B27F /* mangeMovie.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		5FFC6EE2242A1F5D00D0B27F /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -161,14 +142,13 @@
 				5FFC6EAB242A0E3200D0B27F /* Sources */,
 				5FFC6EAC242A0E3200D0B27F /* Frameworks */,
 				5FFC6EAD242A0E3200D0B27F /* Resources */,
-				5FFC6EDD242A192E00D0B27F /* Embed Frameworks */,
-				5FFC6EDE242A1A8700D0B27F /* CopyFiles */,
+				5F118459242CDC8400E629F2 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5FFC6EEC242A1F8F00D0B27F /* PBXTargetDependency */,
 				5FFC6EEA242A1F8700D0B27F /* PBXTargetDependency */,
+				5F118451242CDBD400E629F2 /* PBXTargetDependency */,
 			);
 			name = MovieList;
 			productName = MovieList;
@@ -252,15 +232,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F118451242CDBD400E629F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = mangeMovie;
+			targetProxy = 5F118450242CDBD400E629F2 /* PBXContainerItemProxy */;
+		};
 		5FFC6EEA242A1F8700D0B27F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = dylibMovieList;
 			targetProxy = 5FFC6EE9242A1F8700D0B27F /* PBXContainerItemProxy */;
-		};
-		5FFC6EEC242A1F8F00D0B27F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = mangeMovie;
-			targetProxy = 5FFC6EEB242A1F8F00D0B27F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -379,14 +359,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3V749DTWD;
-				FRAMEWORK_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/";
-				HEADER_SEARCH_PATHS = "/Users/xiaohui.liang/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
+				FRAMEWORK_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
+				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
 				INFOPLIST_FILE = MovieList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/";
+				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
 				PRODUCT_BUNDLE_IDENTIFIER = liang.com.MovieList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers/";
+				USER_HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
 			};
 			name = Debug;
 		};
@@ -395,14 +375,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3V749DTWD;
-				FRAMEWORK_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/";
-				HEADER_SEARCH_PATHS = "/Users/xiaohui.liang/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
+				FRAMEWORK_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
+				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
 				INFOPLIST_FILE = MovieList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/";
+				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
 				PRODUCT_BUNDLE_IDENTIFIER = liang.com.MovieList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/mangeMovie-awkufvygiujoxffeqvzazevwwhov/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers/";
+				USER_HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
 			};
 			name = Release;
 		};

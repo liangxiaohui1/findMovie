@@ -13,8 +13,9 @@ sortMovie is static library
 
 ########### how to use ###########
 
-open MovieList.xcodeproj in xcode to view and run application 
-run test_sortMovie to test sorting function from static library
+open MovieList.xcodeproj in MovieList folder in xcode to view and run application(MovieList target) 
+run test_sortMovie in sorMovie folder to test sorting function from static library
+
 
 ########### UI description ###########
 

@@ -23,9 +23,9 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		5F118460242CE1CA00E629F2 /* libsortMovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F11845B242CDDCC00E629F2 /* libsortMovie.a */; };
 		5FFC6E85242A050100D0B27F /* mangeMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FFC6E83242A050100D0B27F /* mangeMovie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FFC6E8C242A05A100D0B27F /* movieList.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FFC6E8B242A05A100D0B27F /* movieList.m */; };
-		5FFC6E92242A084A00D0B27F /* libsortMovie.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFC6E91242A084A00D0B27F /* libsortMovie.a */; };
 		5FFC6E9B242A0BB800D0B27F /* movieList.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FFC6E8D242A05BD00D0B27F /* movieList.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FFC6EA5242A0CEF00D0B27F /* sortMovie.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FFC6EA4242A0CEF00D0B27F /* sortMovie.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5FFC6ED2242A14B600D0B27F /* sortMovie.h in Resources */ = {isa = PBXBuildFile; fileRef = 5FFC6EA4242A0CEF00D0B27F /* sortMovie.h */; };
@@ -33,6 +33,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		5F11845E242CE0E100E629F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5FFC6E9C242A0C1B00D0B27F /* sortMovie.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5FFC6E66242A025400D0B27F;
+			remoteInfo = sortMovie;
+		};
 		5FFC6E97242A0AAE00D0B27F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FFC6E77242A050100D0B27F /* Project object */;
@@ -45,13 +52,6 @@
 			containerPortal = 5FFC6E9C242A0C1B00D0B27F /* sortMovie.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = 5FFC6E67242A025400D0B27F;
-			remoteInfo = sortMovie;
-		};
-		5FFC6EA2242A0C3200D0B27F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5FFC6E9C242A0C1B00D0B27F /* sortMovie.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FFC6E66242A025400D0B27F;
 			remoteInfo = sortMovie;
 		};
 /* End PBXContainerItemProxy section */
@@ -69,12 +69,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5F11845B242CDDCC00E629F2 /* libsortMovie.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsortMovie.a; path = "../../../../../Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/libsortMovie.a"; sourceTree = "<group>"; };
 		5FFC6E80242A050100D0B27F /* mangeMovie.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = mangeMovie.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFC6E83242A050100D0B27F /* mangeMovie.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mangeMovie.h; sourceTree = "<group>"; };
 		5FFC6E84242A050100D0B27F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5FFC6E8B242A05A100D0B27F /* movieList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = movieList.m; sourceTree = "<group>"; };
 		5FFC6E8D242A05BD00D0B27F /* movieList.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = movieList.h; sourceTree = "<group>"; };
-		5FFC6E91242A084A00D0B27F /* libsortMovie.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libsortMovie.a; path = "../../../../../Library/Developer/Xcode/DerivedData/sortMovie-hbbsfgxcqhqdoybnlisietmbxbnn/Build/Products/Debug-iphonesimulator/libsortMovie.a"; sourceTree = "<group>"; };
 		5FFC6E9C242A0C1B00D0B27F /* sortMovie.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = sortMovie.xcodeproj; path = ../sortMovie/sortMovie.xcodeproj; sourceTree = "<group>"; };
 		5FFC6EA4242A0CEF00D0B27F /* sortMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sortMovie.h; path = ../../sortMovie/sortMovie/sortMovie.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -84,7 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5FFC6E92242A084A00D0B27F /* libsortMovie.a in Frameworks */,
+				5F118460242CE1CA00E629F2 /* libsortMovie.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -124,7 +124,7 @@
 		5FFC6E90242A084A00D0B27F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5FFC6E91242A084A00D0B27F /* libsortMovie.a */,
+				5F11845B242CDDCC00E629F2 /* libsortMovie.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -165,7 +165,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				5FFC6EA3242A0C3200D0B27F /* PBXTargetDependency */,
+				5F11845F242CE0E100E629F2 /* PBXTargetDependency */,
 			);
 			name = mangeMovie;
 			productName = mangeMovie;
@@ -267,15 +267,15 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		5F11845F242CE0E100E629F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = sortMovie;
+			targetProxy = 5F11845E242CE0E100E629F2 /* PBXContainerItemProxy */;
+		};
 		5FFC6E98242A0AAE00D0B27F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 5FFC6E7F242A050100D0B27F /* mangeMovie */;
 			targetProxy = 5FFC6E97242A0AAE00D0B27F /* PBXContainerItemProxy */;
-		};
-		5FFC6EA3242A0C3200D0B27F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = sortMovie;
-			targetProxy = 5FFC6EA2242A0C3200D0B27F /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -387,11 +387,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/sortMovie-hbbsfgxcqhqdoybnlisietmbxbnn/Build/Products/Debug-iphonesimulator/include/sortMovie";
+				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/include/sortMovie";
 				INFOPLIST_FILE = mangeMovie/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/sortMovie-hbbsfgxcqhqdoybnlisietmbxbnn/Build/Products/Debug-iphonesimulator/";
+				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
 				PRODUCT_BUNDLE_IDENTIFIER = liang.com.mangeMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -408,11 +408,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/sortMovie-hbbsfgxcqhqdoybnlisietmbxbnn/Build/Products/Debug-iphonesimulator/include/sortMovie";
+				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/include/sortMovie";
 				INFOPLIST_FILE = mangeMovie/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/sortMovie-hbbsfgxcqhqdoybnlisietmbxbnn/Build/Products/Debug-iphonesimulator/";
+				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
 				PRODUCT_BUNDLE_IDENTIFIER = liang.com.mangeMovie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
