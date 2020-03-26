@@ -18,13 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5F118450242CDBD400E629F2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 5FFC6EE1242A1F5D00D0B27F /* mangeMovie.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 5FFC6E7F242A050100D0B27F;
-			remoteInfo = mangeMovie;
-		};
 		5FFC6EE7242A1F5D00D0B27F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 5FFC6EE1242A1F5D00D0B27F /* mangeMovie.xcodeproj */;
@@ -148,7 +141,6 @@
 			);
 			dependencies = (
 				5FFC6EEA242A1F8700D0B27F /* PBXTargetDependency */,
-				5F118451242CDBD400E629F2 /* PBXTargetDependency */,
 			);
 			name = MovieList;
 			productName = MovieList;
@@ -232,11 +224,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		5F118451242CDBD400E629F2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = mangeMovie;
-			targetProxy = 5F118450242CDBD400E629F2 /* PBXContainerItemProxy */;
-		};
 		5FFC6EEA242A1F8700D0B27F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = dylibMovieList;
@@ -359,14 +346,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3V749DTWD;
-				FRAMEWORK_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
-				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
+				FRAMEWORK_SEARCH_PATHS = "$(BUILD_DIR)/Debug-iphonesimulator";
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/Debug-iphonesimulator/mangeMovie.framework/Headers";
 				INFOPLIST_FILE = MovieList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
+				LIBRARY_SEARCH_PATHS = "$(BUILD_DIR)/Debug-iphonesimulator";
 				PRODUCT_BUNDLE_IDENTIFIER = liang.com.MovieList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
+				USER_HEADER_SEARCH_PATHS = "$(BUIID_DIR)/Debug-iphonesimulator/mangeMovie.framework/Headers";
 			};
 			name = Debug;
 		};
@@ -375,14 +362,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = S3V749DTWD;
-				FRAMEWORK_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
-				HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
+				FRAMEWORK_SEARCH_PATHS = "$(BUILD_DIR)/Debug-iphonesimulator";
+				HEADER_SEARCH_PATHS = "$(BUILD_DIR)/Debug-iphonesimulator/mangeMovie.framework/Headers";
 				INFOPLIST_FILE = MovieList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator";
+				LIBRARY_SEARCH_PATHS = "$(BUILD_DIR)/Debug-iphonesimulator";
 				PRODUCT_BUNDLE_IDENTIFIER = liang.com.MovieList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				USER_HEADER_SEARCH_PATHS = "~/Library/Developer/Xcode/DerivedData/MovieList-bpilwkvbjwjlcmgtoxyvaxffzkeo/Build/Products/Debug-iphonesimulator/mangeMovie.framework/Headers";
+				USER_HEADER_SEARCH_PATHS = "$(BUIID_DIR)/Debug-iphonesimulator/mangeMovie.framework/Headers";
 			};
 			name = Release;
 		};

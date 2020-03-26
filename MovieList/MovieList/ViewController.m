@@ -93,7 +93,7 @@
         movieListObj = [[rootClass alloc] init];
     }
     for (NSDictionary * di in jsonArray) {
-        if([di[jsonReleaseDateField] compare:startDate]> 0 && [di[jsonReleaseDateField] compare:endDate] < 0){
+        if([di[jsonReleaseDateField] compare:startDate]>= 0 && [di[jsonReleaseDateField] compare:endDate] < 0){
             if( RV_OK != [(movieList *)movieListObj insertFilm:di[jsonPopularityField] andTitle:di[jsonTitleField]]){
                 NSLog(@"insert file to list failed");
             }
