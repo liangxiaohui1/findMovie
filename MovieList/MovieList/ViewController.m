@@ -64,8 +64,19 @@
     NSLog(@"pathString: %@", [pathString stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]);  //delete
     
     NSURL * urlString = [NSURL URLWithString:[pathString stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]];
-    NSData * jsonData = [NSData dataWithContentsOfURL:urlString];
-    NSDictionary * jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    NSData *jsonData;
+    NSDictionary * jsonDic;
+    
+    @try{
+        jsonData = [NSData dataWithContentsOfURL:urlString];
+        jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    }
+    @catch(NSException *exception){
+        NSLog(@"there is an exception when connecting url %@",exception.name);
+        self.searchResult.text = @"there is an exception when connecting web";
+        return;
+    }
+
     NSArray * jsonArray = jsonDic[jsonResultField];
     
     NSString *dylibPath = [NSString stringWithFormat:@"%@/Documents/mangeMovie.framework/mangeMovie",NSHomeDirectory()];

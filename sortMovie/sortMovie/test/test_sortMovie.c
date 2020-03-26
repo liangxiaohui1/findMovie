@@ -10,7 +10,7 @@
 #include <string.h>
 #include "sortMovie.h"
 
-#define TEST(a) {if (a) {tests_passed++;} else {tests_failed++;}}
+#define TEST_TURE(a) {if (a) {tests_passed++;} else {tests_failed++;}}
 
 #define TEST_PASS 0
 #define TEST_FAIL 1
@@ -22,7 +22,7 @@ int main()
     int tests_passed=0;
     int tests_failed=0;
     
-    TEST(test_sort_movie() == TEST_PASS);
+    TEST_TURE(test_sort_movie() == TEST_PASS);
 
     if(tests_failed > 0){
         printf("Test failed\n");
@@ -58,15 +58,15 @@ static int test_sort_movie()
     
     sort_movie(&film1, 1);
     
-    TEST(film1.popularity == popularity3 && strncmp(film1.title, title3, strlen(title3))==0);
+    TEST_TURE(film1.popularity == popularity3 && strncmp(film1.title, title3, strlen(title3))==0);
     
     film1.popularity = popularity3; film1.title = title3; film1.next = &film2;
     film2.popularity = popularity1; film2.title = title1; film2.next = NULL;
 
     sort_movie(&film1, 2);
 
-    TEST(film1.popularity == popularity1 && strncmp(film1.title, title1, strlen(title1))==0);
-    TEST(film2.popularity == popularity3 && strncmp(film2.title, title3, strlen(title3))==0);
+    TEST_TURE(film1.popularity == popularity1 && strncmp(film1.title, title1, strlen(title1))==0);
+    TEST_TURE(film2.popularity == popularity3 && strncmp(film2.title, title3, strlen(title3))==0);
     
     film1.popularity = popularity4; film1.title = title4; film1.next = &film2;
     film2.popularity = popularity3; film2.title = title3; film2.next = &film3;
@@ -75,10 +75,10 @@ static int test_sort_movie()
     
     sort_movie(&film1, 4);
 
-    TEST(film1.popularity == popularity1 && strncmp(film1.title, title1, strlen(title1))==0);
-    TEST(film2.popularity == popularity2 && strncmp(film2.title, title2, strlen(title2))==0);
-    TEST(film3.popularity == popularity3 && strncmp(film3.title, title3, strlen(title3))==0);
-    TEST(film4.popularity == popularity4 && strncmp(film4.title, title4, strlen(title4))==0);
+    TEST_TURE(film1.popularity == popularity1 && strncmp(film1.title, title1, strlen(title1))==0);
+    TEST_TURE(film2.popularity == popularity2 && strncmp(film2.title, title2, strlen(title2))==0);
+    TEST_TURE(film3.popularity == popularity3 && strncmp(film3.title, title3, strlen(title3))==0);
+    TEST_TURE(film4.popularity == popularity4 && strncmp(film4.title, title4, strlen(title4))==0);
     
     if (tests_failed > 0)
     {

@@ -26,4 +26,3 @@ run test_sortMovie in sorMovie folder to test sorting function from static libra
 1 confirm button to safely store key during the sesssion
 
 ########### TODO ###########
-1 UI part should handle more exceptions,for example REST API exception
