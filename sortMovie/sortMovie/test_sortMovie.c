@@ -32,7 +32,9 @@ int main()
         return TEST_PASS;
     }
 }
-
+/** coverage is not enough.
+ ** it only cover some simple cases as demo, not cover extreme cases, error input etc.
+ */
 static int test_sort_movie()
 {
     int tests_passed=0;                                                 
