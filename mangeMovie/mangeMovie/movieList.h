@@ -12,11 +12,11 @@
 #import <Foundation/Foundation.h>
 #import "sortMovie.h"
 /*
-**movieList class will store, sort and output movies information
+**movieList is a class which store, sort and output movies information
 **init: constructor function
-**insertFilm: insert one film to node
-**    parameter popularity(input): film's popularity
-**    parameter title(input): film's title
+**insertFilm: insert one film to chain
+**    parameter popularity[input]: film's popularity
+**    parameter title[input]: film's title
 **    return: RV_OK if success
 **            RV_ERR if failure
 **getFilm:get one file according to ranking

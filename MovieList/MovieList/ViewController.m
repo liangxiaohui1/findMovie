@@ -16,9 +16,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *movieKeyWord;
 @property (weak, nonatomic) IBOutlet UITextField *accessKey;
 @property (weak, nonatomic) IBOutlet UITextView *searchResult;
-@property NSString *keyValue;
+@property NSString *website;
+@property NSString *encryptedKeyValue;
 
-- (int) storeAccessKey:(NSString*)keyValue;
+- (int) storeAccessKey:(NSString*)newKeyValue;
 - (NSString *) getAccessKey;
 
 @end
@@ -28,6 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    _website = @"https://api.themoviedb.org";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +40,11 @@
 - (IBAction)searchMovie:(UIButton *)sender {
     NSString *startDate = @"2017-01-01";
     NSString *endDate = @"2018-01-01";
+    NSString *jsonResultField = @"results";
+    NSString *jsonPopularityField = @"popularity";
+    NSString *jsonTitleField = @"title";
+    NSString *jsonReleaseDateField = @"release_date";
+    int numberToDisplay = 10;
 
     if (self.getAccessKey == NULL) {
         NSLog( @"NO access key");
@@ -45,86 +52,87 @@
         return;
     }
     
-    NSMutableString *path = [[NSMutableString alloc] initWithString:@"https://api.themoviedb.org/3/search/movie?api_key="];
-    [path appendString:self.getAccessKey];
+    NSMutableString *pathString = [[NSMutableString alloc] initWithFormat:@"%@/3/search/movie?api_key=",_website];
+    [pathString appendString:self.getAccessKey];
     if(self.movieKeyWord.text.length == 0){
         NSLog( @"NO key word");
         self.movieKeyWord.text = @"please input your searching keyword";
         return;
     }
-    [path appendString:[NSString stringWithFormat:@"&query=%@",self.movieKeyWord.text]];
+    [pathString appendString:[NSString stringWithFormat:@"&query=%@&language=en",self.movieKeyWord.text]];
 
-    NSLog(@"path: %@", [path stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]);
+    NSLog(@"pathString: %@", [pathString stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]);  //delete
     
-    NSURL * url = [NSURL URLWithString:[path stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]];
-    NSData * data = [NSData dataWithContentsOfURL:url];
-    NSDictionary * dic = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:nil];
-
-    NSArray * jsonArr = dic[@"results"];
+    NSURL * urlString = [NSURL URLWithString:[pathString stringByAddingPercentEncodingWithAllowedCharacters:NSCharacterSet.URLQueryAllowedCharacterSet]];
+    NSData * jsonData = [NSData dataWithContentsOfURL:urlString];
+    NSDictionary * jsonDic = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];
+    NSArray * jsonArray = jsonDic[jsonResultField];
     
-    NSString *documentsPath = [NSString stringWithFormat:@"%@/Documents/mangeMovie.framework/mangeMovie",NSHomeDirectory()];
-    void * libHandle = NULL;
-    libHandle = dlopen([documentsPath cStringUsingEncoding:NSUTF8StringEncoding], RTLD_NOW);
-    if (libHandle == NULL) {
-        char *error = dlerror();
-        NSLog(@"dlopen error: %s", error);
-    } else {
-        NSLog(@"dlopen load framework success.");
+    NSString *dylibPath = [NSString stringWithFormat:@"%@/Documents/mangeMovie.framework/mangeMovie",NSHomeDirectory()];
+    void * dylibHandle = NULL;
+    dylibHandle = dlopen([dylibPath cStringUsingEncoding:NSUTF8StringEncoding], RTLD_NOW);
+    if (dylibHandle == NULL) {
+        NSLog(@"dlopen error: %s", dlerror());
+        return;
     }
-    id organizeFilms;
+    
+    id movieListObj;
     Class rootClass = NSClassFromString(@"movieList");
     if (rootClass) {
-        organizeFilms = [[rootClass alloc] init];
+        movieListObj = [[rootClass alloc] init];
     }
-    for (NSDictionary * di in jsonArr) {
-        if([di[@"release_date"] compare:startDate]> 0 && [di[@"release_date"] compare:endDate] < 0){
-            if( RV_OK != [(movieList *)organizeFilms insertFilm:di[@"popularity"] andTitle:di[@"title"]]){
+    for (NSDictionary * di in jsonArray) {
+        if([di[jsonReleaseDateField] compare:startDate]> 0 && [di[jsonReleaseDateField] compare:endDate] < 0){
+            if( RV_OK != [(movieList *)movieListObj insertFilm:di[jsonPopularityField] andTitle:di[jsonTitleField]]){
                 NSLog(@"insert file to list failed");
             }
         }
     }
 
-    NSMutableString *resultString = [[NSMutableString alloc] init];
-    filmNode *oneFilm = NULL;
+    NSMutableString *displayString = [[NSMutableString alloc] init];
+    filmNode *aFilm = NULL;
     int ranking = 0;
-    for(ranking = 0; ranking < 10; ranking++){
-        oneFilm = [(movieList *)organizeFilms getFilm:ranking];
-        if(oneFilm != NULL){
-            [resultString appendString: [[NSString alloc] initWithFormat:@"%d：", ranking+1]];
-            [resultString appendString: [[NSString alloc] initWithCString:(const char*)oneFilm->title encoding:NSASCIIStringEncoding]];
-            [resultString appendString: @"\n"];
+    for(ranking = 0; ranking < numberToDisplay; ranking++){
+        aFilm = [(movieList *)movieListObj getFilm:ranking];
+        if(aFilm != NULL){
+            [displayString appendString: [[NSString alloc] initWithFormat:@"%d：", ranking+1]];
+            [displayString appendString: [[NSString alloc] initWithCString:(const char*)aFilm->title encoding:NSASCIIStringEncoding]];
+            [displayString appendString: @"\n"];
         }
     }
-    if(resultString.length == 0){
-        [resultString appendString:@"no movie matched!"];
+    if(displayString.length == 0){
+        [displayString appendString:@"no movie matched!"];
     }
         
-    NSLog(@"resultString %@", resultString);
-    self.searchResult.text = resultString;
+    NSLog(@"resultString %@", displayString);
+    self.searchResult.text = displayString;
     
 }
 - (IBAction)confirm:(UIButton *)sender {
     
     if(self.accessKey.text.length != 0){
-        [self storeAccessKey:(NSString *)self.accessKey.text];
+        [self storeAccessKey:self.accessKey.text];
+        //clear memory for security
+        self.accessKey.text = [self.accessKey.text stringByReplacingCharactersInRange:NSMakeRange(0,self.accessKey.text.length) withString:@"Key value inputed!"];
     }
-    self.accessKey.text = [self.accessKey.text stringByReplacingCharactersInRange:NSMakeRange(0,self.accessKey.text.length) withString:@"Key value saved!"];
 }
 
-- (int) storeAccessKey:(NSString*)keyValue{
-
-    self.accessKey.text = [self.accessKey.text stringByReplacingOccurrencesOfString:@"1" withString:@"k"];
-    self.accessKey.text = [self.accessKey.text stringByReplacingOccurrencesOfString:@"a" withString:@"z"];
-    _keyValue = [[NSString alloc] initWithString:self.accessKey.text];
-    NSLog(@"self.accessKey.text %@",_keyValue);
+- (int) storeAccessKey:(NSString*)newKeyValue{
+    if(newKeyValue.length != 0){
+        /*the content twist method is meaningless, just show the point plain text should be stored directly*/
+        newKeyValue = [newKeyValue stringByReplacingOccurrencesOfString:@"1" withString:@"k"];
+        newKeyValue = [newKeyValue stringByReplacingOccurrencesOfString:@"a" withString:@"z"];
+        _encryptedKeyValue = [[NSString alloc] initWithString:newKeyValue];
+    }
     return RV_OK;
 }
+
 - (NSString *) getAccessKey{
-    if(_keyValue.length != 0){
-        NSString *value = [[NSString alloc] initWithString:_keyValue];
-        value = [value stringByReplacingOccurrencesOfString:@"k" withString:@"1"];
-        value = [value stringByReplacingOccurrencesOfString:@"z" withString:@"a"];
-        return value;
+    if(_encryptedKeyValue.length != 0){
+        NSString *plainKeyValue = [[NSString alloc] initWithString:_encryptedKeyValue];
+        plainKeyValue = [plainKeyValue stringByReplacingOccurrencesOfString:@"k" withString:@"1"];
+        plainKeyValue = [plainKeyValue stringByReplacingOccurrencesOfString:@"z" withString:@"a"];
+        return plainKeyValue;
     }
     else
         return NULL;
