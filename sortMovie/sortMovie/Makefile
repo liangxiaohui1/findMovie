@@ -1,15 +1,12 @@
 CFLAGS = -g -Wall -DDEBUG
 CINCLUDE = -I .
-compile:test_sortMovie
-	
-%.o:%.c 
-	cc $(CFLAGS) $(CINCLUDE) -c $(filter %.c, $^) -o $@
+compile:test_sortMovie clean
 
 test_sortMovie: test_sortMovie.o sortMovie.o
 	cc $(CFLAGS) $(CINCLUDE) -o test_sortMovie test_sortMovie.o sortMovie.o
 
-test_sortMovie.o:test_sortMovie.c sortMovie.c
-	cc $(CFLAGS) $(CINCLUDE) -c test_sortMovie.c sortMovie.c
+test_sortMovie.o: test/test_sortMovie.c sortMovie.c
+	cc $(CFLAGS) $(CINCLUDE) -c test/test_sortMovie.c sortMovie.c
 
 clean:
 	-rm *.o

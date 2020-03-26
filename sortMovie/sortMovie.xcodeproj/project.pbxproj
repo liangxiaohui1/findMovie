@@ -25,7 +25,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		5F11843C242B861A00E629F2 /* test_sortMovie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test_sortMovie.c; sourceTree = "<group>"; };
 		5FFC6E67242A025400D0B27F /* libsortMovie.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libsortMovie.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FFC6E73242A030800D0B27F /* sortMovie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sortMovie.h; sourceTree = "<group>"; };
 		5FFC6E74242A030800D0B27F /* sortMovie.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sortMovie.c; sourceTree = "<group>"; };
@@ -63,7 +62,6 @@
 			children = (
 				5FFC6E73242A030800D0B27F /* sortMovie.h */,
 				5FFC6E74242A030800D0B27F /* sortMovie.c */,
-				5F11843C242B861A00E629F2 /* test_sortMovie.c */,
 			);
 			path = sortMovie;
 			sourceTree = "<group>";
