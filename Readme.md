@@ -30,6 +30,4 @@ from top to bottom
 
 ########### TODO ###########
 
-1 xcode build setting need to enhance
-2 No enough sanity check, for example user input
-3 There is no unit test for class from dynamic library
+1 There is no unit test for class in dynamic library
